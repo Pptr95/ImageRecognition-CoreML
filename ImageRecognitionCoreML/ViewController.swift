@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var recognizeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func next(_ sender: UIButton) {
-        let img = UIImage(named: self.images[self.current])
+        let img = UIImage(named: self.images[self.current])?.resizeTo(size: CGSize(width: 299, height: 299))
         self.imageView.image = img
         self.current = (self.current + 1) % self.images.count
     }
@@ -29,3 +29,13 @@ class ViewController: UIViewController {
 
 }
 
+extension UIImage {
+    func resizeTo(size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return resizedImage
+        
+    }
+}
