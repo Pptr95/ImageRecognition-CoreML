@@ -24,6 +24,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         super.viewDidLoad()
         self.imagePicker.sourceType = .photoLibrary
         self.imagePicker.delegate = self
+        self.textArea.isEditable = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -41,7 +42,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         guard let visionModel = try? VNCoreMLModel(for: self.model.model) else {fatalError("Unable to create VisionModel")}
         let visionRequest = VNCoreMLRequest(model: visionModel) {request, error
             in
-            //TODO
+            if error != nil {
+                return
+            }
+            guard let result = request.results as? [VNClassificationObservation] else {return}
+            let classification = result.map { modelClassification in "\(modelClassification.identifier) " + "\(modelClassification.confidence * 100)"}
+            DispatchQueue.main.async {
+                self.textArea.text = ""
+                self.textArea.text = classification.joined(separator: "\n")
+            }
         }
         let visionRequestHandler = VNImageRequestHandler(ciImage: ciImage, orientation: .up, options: [:])
         DispatchQueue.global(qos: .userInteractive).async {
