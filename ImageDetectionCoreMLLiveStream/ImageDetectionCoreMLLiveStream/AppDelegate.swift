@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ImageDetectionCoreMLLiveStream
 //
-//  Created by Valerio Potrimba on 30/07/2018.
-//  Copyright © 2018 Petru Potrimba. All rights reserved.
+//  Created by Mohammad Azam on 9/5/17.
+//  Copyright © 2017 Mohammad Azam. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
