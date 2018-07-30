@@ -16,11 +16,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBOutlet weak var cameraView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
+    private let inceptionModel = Inceptionv3()
+    private let requests = [VNCoreMLModel]()
+    
     let session = AVCaptureSession()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startLiveVideo()
+        createImageRequest()
     }
     
     private func startLiveVideo() {
@@ -41,6 +45,26 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.cameraView.layer.addSublayer(imageLayer)
         
         self.session.startRunning()
+    }
+    
+    func createImageRequest() {
+        guard let model = try? VNCoreMLModel(for: self.inceptionModel.model) else {
+            fatalError("Unable to create a CoreML model.")
+        }
+        
+        let request = VNCoreMLRequest(model: model) {request, error
+            in
+            if error != nil {
+                return
+            }
+            
+            guard let observation =  request.results as? [VNClassificationObservation] else {return}
+            let classification = observation.map { modelClassification in "\(modelClassification.identifier) " + "\(modelClassification.confidence * 100.0)"}
+            DispatchQueue.main.async {
+                self.textView.text = classification.joined(separator: "\n")
+            }
+        }
+        
     }
 
 
