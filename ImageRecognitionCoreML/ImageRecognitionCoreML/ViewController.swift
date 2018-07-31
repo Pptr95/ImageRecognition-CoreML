@@ -16,15 +16,16 @@ class ViewController: UIViewController {
         let img = UIImage(named: self.images[self.current])
         self.imageView.image = img
         self.current = (self.current + 1) % self.images.count
-        let resizedImage = img?.resizeTo(size: CGSize(width: 299, height: 299))
+        let resizedImage = img?.resizeTo(size: CGSize(width: 224, height: 224))
         let bufferedImage = resizedImage?.toBuffer()
-        let prediction = try! self.model.prediction(image: bufferedImage!)
+        let prediction = try! self.model.prediction(input: InceptionV1Input(input__0: bufferedImage!))
+        
         self.recognizeLabel.text = prediction.classLabel
     }
     
     let images = ["dog.jpg", "cat.jpg", "rat.jpg", "banana.jpg"]
     var current: Int = 0
-    private var model: Inceptionv3 = Inceptionv3()
+    private var model: InceptionV1 = InceptionV1()
     
     override func viewDidLoad() {
         super.viewDidLoad()

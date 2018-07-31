@@ -12,11 +12,11 @@
 		2F336EB1210E144400D08605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EAF210E144400D08605 /* Main.storyboard */; };
 		2F336EB3210E144B00D08605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EB2210E144B00D08605 /* Assets.xcassets */; };
 		2F336EB6210E144B00D08605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EB4210E144B00D08605 /* LaunchScreen.storyboard */; };
-		2F336EBE210E14D200D08605 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2F336EBD210E14D200D08605 /* Inceptionv3.mlmodel */; };
 		2F336EC0210E200900D08605 /* banana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EBF210E200900D08605 /* banana.jpg */; };
 		2F336EC2210E201300D08605 /* rat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EC1210E201300D08605 /* rat.jpg */; };
 		2F336EC4210E201900D08605 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EC3210E201900D08605 /* cat.jpg */; };
 		2F336EC6210E201F00D08605 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F336EC5210E201F00D08605 /* dog.jpg */; };
+		2FACFA312110A331008B0F7F /* InceptionV1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2FACFA302110A331008B0F7F /* InceptionV1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +27,11 @@
 		2F336EB2210E144B00D08605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F336EB5210E144B00D08605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F336EB7210E144B00D08605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F336EBD210E14D200D08605 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		2F336EBF210E200900D08605 /* banana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banana.jpg; sourceTree = "<group>"; };
 		2F336EC1210E201300D08605 /* rat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rat.jpg; sourceTree = "<group>"; };
 		2F336EC3210E201900D08605 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
 		2F336EC5210E201F00D08605 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		2FACFA302110A331008B0F7F /* InceptionV1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV1.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			children = (
 				2F336EAB210E144400D08605 /* AppDelegate.swift */,
 				2F336EAD210E144400D08605 /* ViewController.swift */,
-				2F336EBD210E14D200D08605 /* Inceptionv3.mlmodel */,
+				2FACFA302110A331008B0F7F /* InceptionV1.mlmodel */,
 				2F336EAF210E144400D08605 /* Main.storyboard */,
 				2F336EC5210E201F00D08605 /* dog.jpg */,
 				2F336EC3210E201900D08605 /* cat.jpg */,
@@ -154,8 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FACFA312110A331008B0F7F /* InceptionV1.mlmodel in Sources */,
 				2F336EAE210E144400D08605 /* ViewController.swift in Sources */,
-				2F336EBE210E14D200D08605 /* Inceptionv3.mlmodel in Sources */,
 				2F336EAC210E144400D08605 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
