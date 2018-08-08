@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  ImageDetectionCoreMLLiveStream
-//
-//  Created by Mohammad Azam on 9/5/17.
-//  Copyright © 2017 Mohammad Azam. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 import CoreML
