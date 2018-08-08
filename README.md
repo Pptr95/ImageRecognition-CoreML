@@ -1,1 +1,1 @@
-# ImageRecognition-CoreML
+# play-with-CoreML
